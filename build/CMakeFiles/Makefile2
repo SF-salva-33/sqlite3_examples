@@ -54,20 +54,24 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chaos/proyectos/sqlite3
+CMAKE_SOURCE_DIR = /run/media/chaos/terciario/proyectos/sqlite3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chaos/proyectos/sqlite3/build
+CMAKE_BINARY_DIR = /run/media/chaos/terciario/proyectos/sqlite3/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/test.dir/all
+all: CMakeFiles/queries_complejos.dir/all
+all: CMakeFiles/queries_sensillos.dir/all
+all: CMakeFiles/intro.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/test.dir/codegen
+codegen: CMakeFiles/queries_complejos.dir/codegen
+codegen: CMakeFiles/queries_sensillos.dir/codegen
+codegen: CMakeFiles/intro.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +79,106 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/test.dir/clean
+clean: CMakeFiles/queries_complejos.dir/clean
+clean: CMakeFiles/queries_sensillos.dir/clean
+clean: CMakeFiles/intro.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test.dir
+# Target rules for target CMakeFiles/queries_complejos.dir
 
 # All Build rule for target.
-CMakeFiles/test.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/chaos/proyectos/sqlite3/build/CMakeFiles --progress-num=1,2,3 "Built target test"
-.PHONY : CMakeFiles/test.dir/all
+CMakeFiles/queries_complejos.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles --progress-num=4,5,6 "Built target queries_complejos"
+.PHONY : CMakeFiles/queries_complejos.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chaos/proyectos/sqlite3/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chaos/proyectos/sqlite3/build/CMakeFiles 0
-.PHONY : CMakeFiles/test.dir/rule
+CMakeFiles/queries_complejos.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/queries_complejos.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles 0
+.PHONY : CMakeFiles/queries_complejos.dir/rule
 
 # Convenience name for target.
-test: CMakeFiles/test.dir/rule
-.PHONY : test
+queries_complejos: CMakeFiles/queries_complejos.dir/rule
+.PHONY : queries_complejos
 
 # codegen rule for target.
-CMakeFiles/test.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/chaos/proyectos/sqlite3/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target test"
-.PHONY : CMakeFiles/test.dir/codegen
+CMakeFiles/queries_complejos.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles --progress-num=4,5,6 "Finished codegen for target queries_complejos"
+.PHONY : CMakeFiles/queries_complejos.dir/codegen
 
 # clean rule for target.
-CMakeFiles/test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
-.PHONY : CMakeFiles/test.dir/clean
+CMakeFiles/queries_complejos.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/clean
+.PHONY : CMakeFiles/queries_complejos.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/queries_sensillos.dir
+
+# All Build rule for target.
+CMakeFiles/queries_sensillos.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles --progress-num=7,8,9 "Built target queries_sensillos"
+.PHONY : CMakeFiles/queries_sensillos.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/queries_sensillos.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/queries_sensillos.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles 0
+.PHONY : CMakeFiles/queries_sensillos.dir/rule
+
+# Convenience name for target.
+queries_sensillos: CMakeFiles/queries_sensillos.dir/rule
+.PHONY : queries_sensillos
+
+# codegen rule for target.
+CMakeFiles/queries_sensillos.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles --progress-num=7,8,9 "Finished codegen for target queries_sensillos"
+.PHONY : CMakeFiles/queries_sensillos.dir/codegen
+
+# clean rule for target.
+CMakeFiles/queries_sensillos.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/clean
+.PHONY : CMakeFiles/queries_sensillos.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/intro.dir
+
+# All Build rule for target.
+CMakeFiles/intro.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles --progress-num=1,2,3 "Built target intro"
+.PHONY : CMakeFiles/intro.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/intro.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/intro.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles 0
+.PHONY : CMakeFiles/intro.dir/rule
+
+# Convenience name for target.
+intro: CMakeFiles/intro.dir/rule
+.PHONY : intro
+
+# codegen rule for target.
+CMakeFiles/intro.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target intro"
+.PHONY : CMakeFiles/intro.dir/codegen
+
+# clean rule for target.
+CMakeFiles/intro.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/clean
+.PHONY : CMakeFiles/intro.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

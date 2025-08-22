@@ -1,3 +1,5 @@
-/home/chaos/proyectos/sqlite3/build/CMakeFiles/test.dir
-/home/chaos/proyectos/sqlite3/build/CMakeFiles/edit_cache.dir
-/home/chaos/proyectos/sqlite3/build/CMakeFiles/rebuild_cache.dir
+/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/queries_complejos.dir
+/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/queries_sensillos.dir
+/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/intro.dir
+/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/edit_cache.dir
+/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/rebuild_cache.dir

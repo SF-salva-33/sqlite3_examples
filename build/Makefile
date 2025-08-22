@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chaos/proyectos/sqlite3
+CMAKE_SOURCE_DIR = /run/media/chaos/terciario/proyectos/sqlite3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chaos/proyectos/sqlite3/build
+CMAKE_BINARY_DIR = /run/media/chaos/terciario/proyectos/sqlite3/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chaos/proyectos/sqlite3/build/CMakeFiles /home/chaos/proyectos/sqlite3/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles /run/media/chaos/terciario/proyectos/sqlite3/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chaos/proyectos/sqlite3/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,52 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named queries_complejos
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
-.PHONY : test
+queries_complejos: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 queries_complejos
+.PHONY : queries_complejos
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+queries_complejos/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/build
+.PHONY : queries_complejos/fast
+
+#=============================================================================
+# Target rules for targets named queries_sensillos
+
+# Build rule for target.
+queries_sensillos: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 queries_sensillos
+.PHONY : queries_sensillos
+
+# fast build rule for target.
+queries_sensillos/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/build
+.PHONY : queries_sensillos/fast
+
+#=============================================================================
+# Target rules for targets named intro
+
+# Build rule for target.
+intro: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 intro
+.PHONY : intro
+
+# fast build rule for target.
+intro/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/build
+.PHONY : intro/fast
 
 lib/sqlite3.o: lib/sqlite3.c.o
 .PHONY : lib/sqlite3.o
 
 # target to build an object file
 lib/sqlite3.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/lib/sqlite3.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/lib/sqlite3.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/lib/sqlite3.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/lib/sqlite3.c.o
 .PHONY : lib/sqlite3.c.o
 
 lib/sqlite3.i: lib/sqlite3.c.i
@@ -142,7 +170,9 @@ lib/sqlite3.i: lib/sqlite3.c.i
 
 # target to preprocess a source file
 lib/sqlite3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/lib/sqlite3.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/lib/sqlite3.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/lib/sqlite3.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/lib/sqlite3.c.i
 .PHONY : lib/sqlite3.c.i
 
 lib/sqlite3.s: lib/sqlite3.c.s
@@ -150,32 +180,82 @@ lib/sqlite3.s: lib/sqlite3.c.s
 
 # target to generate assembly for a file
 lib/sqlite3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/lib/sqlite3.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/lib/sqlite3.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/lib/sqlite3.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/lib/sqlite3.c.s
 .PHONY : lib/sqlite3.c.s
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+src/introduccion/intro.o: src/introduccion/intro.cpp.o
+.PHONY : src/introduccion/intro.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/introduccion/intro.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/src/introduccion/intro.cpp.o
+.PHONY : src/introduccion/intro.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/introduccion/intro.i: src/introduccion/intro.cpp.i
+.PHONY : src/introduccion/intro.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/introduccion/intro.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/src/introduccion/intro.cpp.i
+.PHONY : src/introduccion/intro.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/introduccion/intro.s: src/introduccion/intro.cpp.s
+.PHONY : src/introduccion/intro.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/introduccion/intro.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intro.dir/build.make CMakeFiles/intro.dir/src/introduccion/intro.cpp.s
+.PHONY : src/introduccion/intro.cpp.s
+
+src/queries_complejos/queries_stmt.o: src/queries_complejos/queries_stmt.cpp.o
+.PHONY : src/queries_complejos/queries_stmt.o
+
+# target to build an object file
+src/queries_complejos/queries_stmt.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/src/queries_complejos/queries_stmt.cpp.o
+.PHONY : src/queries_complejos/queries_stmt.cpp.o
+
+src/queries_complejos/queries_stmt.i: src/queries_complejos/queries_stmt.cpp.i
+.PHONY : src/queries_complejos/queries_stmt.i
+
+# target to preprocess a source file
+src/queries_complejos/queries_stmt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/src/queries_complejos/queries_stmt.cpp.i
+.PHONY : src/queries_complejos/queries_stmt.cpp.i
+
+src/queries_complejos/queries_stmt.s: src/queries_complejos/queries_stmt.cpp.s
+.PHONY : src/queries_complejos/queries_stmt.s
+
+# target to generate assembly for a file
+src/queries_complejos/queries_stmt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_complejos.dir/build.make CMakeFiles/queries_complejos.dir/src/queries_complejos/queries_stmt.cpp.s
+.PHONY : src/queries_complejos/queries_stmt.cpp.s
+
+src/queries_sensillos/queries_sensillo.o: src/queries_sensillos/queries_sensillo.cpp.o
+.PHONY : src/queries_sensillos/queries_sensillo.o
+
+# target to build an object file
+src/queries_sensillos/queries_sensillo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/src/queries_sensillos/queries_sensillo.cpp.o
+.PHONY : src/queries_sensillos/queries_sensillo.cpp.o
+
+src/queries_sensillos/queries_sensillo.i: src/queries_sensillos/queries_sensillo.cpp.i
+.PHONY : src/queries_sensillos/queries_sensillo.i
+
+# target to preprocess a source file
+src/queries_sensillos/queries_sensillo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/src/queries_sensillos/queries_sensillo.cpp.i
+.PHONY : src/queries_sensillos/queries_sensillo.cpp.i
+
+src/queries_sensillos/queries_sensillo.s: src/queries_sensillos/queries_sensillo.cpp.s
+.PHONY : src/queries_sensillos/queries_sensillo.s
+
+# target to generate assembly for a file
+src/queries_sensillos/queries_sensillo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/queries_sensillos.dir/build.make CMakeFiles/queries_sensillos.dir/src/queries_sensillos/queries_sensillo.cpp.s
+.PHONY : src/queries_sensillos/queries_sensillo.cpp.s
 
 # Help Target
 help:
@@ -185,13 +265,21 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
+	@echo "... intro"
+	@echo "... queries_complejos"
+	@echo "... queries_sensillos"
 	@echo "... lib/sqlite3.o"
 	@echo "... lib/sqlite3.i"
 	@echo "... lib/sqlite3.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/introduccion/intro.o"
+	@echo "... src/introduccion/intro.i"
+	@echo "... src/introduccion/intro.s"
+	@echo "... src/queries_complejos/queries_stmt.o"
+	@echo "... src/queries_complejos/queries_stmt.i"
+	@echo "... src/queries_complejos/queries_stmt.s"
+	@echo "... src/queries_sensillos/queries_sensillo.o"
+	@echo "... src/queries_sensillos/queries_sensillo.i"
+	@echo "... src/queries_sensillos/queries_sensillo.s"
 .PHONY : help
 
 
