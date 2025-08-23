@@ -54,7 +54,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/queries_complejos.dir/DependInfo.cmake"
-  "CMakeFiles/queries_sensillos.dir/DependInfo.cmake"
+  "CMakeFiles/sqlite3.dir/DependInfo.cmake"
+  "CMakeFiles/ejemplo.dir/DependInfo.cmake"
   "CMakeFiles/intro.dir/DependInfo.cmake"
+  "CMakeFiles/queries_stmt.dir/DependInfo.cmake"
+  "CMakeFiles/queries_sensillo.dir/DependInfo.cmake"
   )

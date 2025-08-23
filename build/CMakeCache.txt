@@ -148,7 +148,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=sqlite
+CMAKE_PROJECT_NAME:STATIC=sqlite_ejemplo
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -216,22 +216,13 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-sqlite_BINARY_DIR:STATIC=/run/media/chaos/terciario/proyectos/sqlite3/build
+sqlite_ejemplo_BINARY_DIR:STATIC=/run/media/chaos/terciario/proyectos/sqlite3/build
 
 //Value Computed by CMake
-sqlite_IS_TOP_LEVEL:STATIC=ON
+sqlite_ejemplo_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-sqlite_SOURCE_DIR:STATIC=/run/media/chaos/terciario/proyectos/sqlite3
-
-//Value Computed by CMake
-test_BINARY_DIR:STATIC=/run/media/chaos/terciario/proyectos/sqlite3/build
-
-//Value Computed by CMake
-test_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-test_SOURCE_DIR:STATIC=/run/media/chaos/terciario/proyectos/sqlite3
+sqlite_ejemplo_SOURCE_DIR:STATIC=/run/media/chaos/terciario/proyectos/sqlite3
 
 
 ########################
