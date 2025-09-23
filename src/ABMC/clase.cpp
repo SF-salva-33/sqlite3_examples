@@ -66,12 +66,25 @@ int main(int argc, char** argv) {
 	}
 	
 	//INSERT INTO bolitas VALUES (numero,color);
+		//Este puntero va a almacenar el query que vallamos creando
 	sqlite3_stmt* insertar;
-	sqlite3_prepare_v2(messi,"INSERT INTO bolitas(color, numero) VALUES(?,?);",-1,&insertar,NULL); 
+	//sqlite3_prepare_v2(db,sql,size,&sqlite3_stmt,sql_extra);
+	//el parametro "sql_extra" es opcional y solo en los casos en donde haya multiples queryes
+	//el parametro "sql" contiene comodines definidos con el caracter ?
+	//que especifica el lugar en donde luego se van a añadir los datos
+	
+	string sql =  "INSERT INTO bolitas(color, numero) VALUES(?,?);";
+	if (nuevo) {
+		sql = "INSERT INTO bolitas(color, numero, ";
+		sql += 	campo;
+		sql += ") VALUES(?,?,?);";
+	}
+	sqlite3_prepare_v2(messi,sql.c_str(),-1,&insertar,NULL); 
 	//! -1 es un parametro que define el tamaño del texto a insertar 
 	//Bind es para ingresar los valores al query SQL
 	sqlite3_bind_int(insertar,2,numero);
 	sqlite3_bind_text(insertar,1,color,-1,SQLITE_STATIC); //! -1 es un parametro que define el tamaño del texto a insertar
+	if (nuevo) sqlite3_bind_text(insertar,3,extra,-1,SQLITE_STATIC);
 	//El numero se refiere al orden de aparicion de signo de pregunta, el cual esta estructurado segun la tabla
 	//(Numero, Color)
 	
@@ -101,7 +114,7 @@ int main(int argc, char** argv) {
 		query += string(campo);
 		//query += " ";
 		//query += string(tipo);
-		query += " TEXT);";
+		query += " TEXT DEFAULT 'null');";
 		//cout << query;
 		sqlite3_exec(messi,query.c_str(),NULL,NULL,NULL);
 		
@@ -110,11 +123,8 @@ int main(int argc, char** argv) {
 		//sqlite3_exec(messi,"DROP TABLE bolitas;",obtenerBolitas,NULL,NULL);	Para borrar tabla
 		sqlite3_exec(messi,"ALTER TABLE bolitas RENAME TO bolitas1;",NULL,NULL,NULL);	
 		sqlite3_exec(messi,"ALTER TABLE NBolitas RENAME TO bolitas;",NULL,NULL,NULL);
-		string upd = "UPDATE bolitas SET ";
-		upd += string(campo);
-		upd += " = 'a';";
-		sqlite3_exec(messi,upd.c_str(),NULL,NULL,NULL);
 		sqlite3_exec(messi,"SELECT (id,numero,color) FROM bolitas;",obtenerBolitas,NULL,NULL);
+		nuevo = true;
 		break;
 	}
 	case 4: {
