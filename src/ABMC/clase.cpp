@@ -14,9 +14,16 @@ using namespace std;
 
 //int (*callback)(void*,int,char**,char**)
 int obtenerBolitas(void* param, int argc /*Argument counter*/, char** argv /*Argument value*/, char** col /*Argument counter*/){
-	for (int i = 0; i < argc; i++){
-		cout << col[i]	<< ":" << argv[i] << "\n";	
+	if (col[3][0] == 'V'){
+		return 0;
 	}
+	for (int i = 0; i < argc; i++){
+		if (i == 3){
+		continue;
+		}
+		cout << col[i]	<< ":" << argv[i] << "\t";	
+	}
+	cout << endl;
 	return 0;
 }
 
@@ -29,10 +36,10 @@ int main(int argc, char** argv) {
 	//f(loco,&messi); ! alternativa para la apertura de la base de datos
 	
 	//Abrimos o creamos el archivo de base de datos "amongas"
-	sqlite3_open(loco,&messi);
+		sqlite3_open(loco,&messi);
 	
 	//sqlite3_exec(db,sql,callback,param,errmsg); ! Creamos una tabla bolita con un numero y un color
-	sqlite3_exec(messi,"CREATE TABLE IF NOT EXISTS bolitas(id INTEGER PRIMARY KEY,numero NUMBER, color TEXT);",NULL,NULL,NULL);	
+	sqlite3_exec(messi,"CREATE TABLE IF NOT EXISTS bolitas(id INTEGER PRIMARY KEY,numero NUMBER, color TEXT, eliminado TEXT);",NULL,NULL,NULL);	
 	do {
 	
 	int opc = 0;
@@ -40,7 +47,10 @@ int main(int argc, char** argv) {
 	cout << "\t\t\tMen" << char(163) << "\n\n";
 	cout << "\t\t1- Insertar bolitas\n";
 	cout << "\t\t2- Listado de bolitas\n";
-	cout << endl <<"\t\t3- Salir\n";
+	cout << "\t\t3- Actualizar bolita\n";
+	cout << "\t\t4- Eliminar bolitas de forma fisica\n";
+	cout << "\t\t5- Eliminar bolitas de forma logica\n";
+	cout << endl <<"\t\t6- Salir\n";
 	cout << "\t----------------------------------\n";
 	
 	cout << "\n\t\t\tElija la opcion:";
@@ -78,7 +88,7 @@ int main(int argc, char** argv) {
 		}
 	case 2: {
 		//CONSULTA
-	// int sqlite3_exec(db, sql, callback, param, errmsg) {
+	// int sqlite3_exec(d b, sql, callback, param, errmsg) {
 	// for (EJECUTAR(sql)){
 	// 	callback(result);
 	// 	}
@@ -87,7 +97,79 @@ int main(int argc, char** argv) {
 		break;
 	}
 	case 3: {
-		return 0 ;
+		//ACTUALIZACION
+		//Pedir algun dato identificador al usuario
+		system("cls");
+		sqlite3_exec(messi,"SELECT * FROM bolitas;",obtenerBolitas,NULL,NULL);
+		system("pause");
+		
+		int id;
+		cout << "Ingrese id\n";
+		cin >> id;
+		
+		
+		//Pedimos los nuevos datos
+		int numero;
+		cout << "Ingrese numero\n";
+		cin >> numero;
+		char color[25];
+		cout << "Ingrese color\n";
+		cin >> color;
+		
+		sqlite3_stmt* stmt;
+		sqlite3_prepare_v2(messi,"UPDATE bolitas SET numero = ?, color = ? WHERE id = ?;",-1,&stmt,0);
+		sqlite3_bind_int(stmt,1,numero);
+		sqlite3_bind_text(stmt,2,color,-1,SQLITE_STATIC);
+		sqlite3_bind_int(stmt,3,id);
+		
+		sqlite3_step(stmt);
+		sqlite3_exec(messi,"SELECT * FROM bolitas;",obtenerBolitas,NULL,NULL);
+		break;
+	}
+	case 4: {
+		
+		//ELIMINACION
+		//Pedir algun dato identificador al usuario
+		system("cls");
+		sqlite3_exec(messi,"SELECT * FROM bolitas;",obtenerBolitas,NULL,NULL);
+		system("pause");
+		
+		int id;
+		cout << "Ingrese id\n";
+		cin >> id;
+		
+		
+		sqlite3_stmt* stmt;
+		sqlite3_prepare_v2(messi,"DELETE FROM bolitas WHERE id = ?;",-1,&stmt,0);
+		sqlite3_bind_int(stmt,1,id);
+		
+		sqlite3_step(stmt);
+		sqlite3_exec(messi,"SELECT * FROM bolitas;",obtenerBolitas,NULL,NULL);
+		break;
+	} 
+	case 5: {
+		
+		//ELIMINACION LOGICA
+		//Pedir algun dato identificador al usuario
+		system("cls");
+		sqlite3_exec(messi,"SELECT * FROM bolitas;",obtenerBolitas,NULL,NULL);
+		system("pause");
+		
+		int id;
+		cout << "Ingrese id\n";
+		cin >> id;
+		
+		
+		sqlite3_stmt* stmt;
+		sqlite3_prepare_v2(messi,"UPDATE bolitas SET eliminado = 'V' WHERE id = ?;",-1,&stmt,0);
+		sqlite3_bind_int(stmt,1,id);
+		
+		sqlite3_step(stmt);
+		sqlite3_exec(messi,"SELECT * FROM bolitas;",obtenerBolitas,NULL,NULL);
+		break;
+	}
+	case 6: {
+		return 0;
 		break;
 	}
 	default: {
@@ -95,15 +177,9 @@ int main(int argc, char** argv) {
 		break;
 	}	
 	}
-	system("cls");
 	}while(true);
-	
-	
-	//MODIFICACION
-	
 	
 	//Cerramos la base de datos
 	sqlite3_close(messi);
-	system("pause");
 	return 0;
 }
