@@ -1,7 +1,9 @@
-/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/sqlite3.dir
-/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/ejemplo.dir
-/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/intro.dir
-/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/queries_stmt.dir
-/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/queries_sensillo.dir
-/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/edit_cache.dir
-/run/media/chaos/terciario/proyectos/sqlite3/build/CMakeFiles/rebuild_cache.dir
+/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/sqlite3.dir
+/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/clase.dir
+/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/ejemplo.dir
+/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/video.dir
+/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/intro.dir
+/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/queries_stmt.dir
+/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/queries_sensillo.dir
+/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/edit_cache.dir
+/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/rebuild_cache.dir

@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/run/media/chaos/terciario/proyectos/sqlite3/build/cmake_install.cmake"
+		"/home/chaos/proyectos/sqlite3_examples/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
