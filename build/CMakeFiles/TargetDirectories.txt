@@ -1,9 +1,0 @@
-/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/sqlite3.dir
-/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/clase.dir
-/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/ejemplo.dir
-/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/video.dir
-/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/intro.dir
-/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/queries_stmt.dir
-/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/queries_sensillo.dir
-/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/edit_cache.dir
-/home/chaos/proyectos/sqlite3_examples/build/CMakeFiles/rebuild_cache.dir
